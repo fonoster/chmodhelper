@@ -1,0 +1,30 @@
+{
+  "name": "chmodhelper",
+  "version": "0.0.1",
+  "description": "Watches changes on a given directory. Updates files mode.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fonoster/chmodhelper"
+  },
+  "keywords": [
+    "filesystem",
+    "chmod"
+  ],
+  "author": "Pedro Sanders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fonoster/chmodhelper/issues"
+  },
+  "homepage": "https://github.com/fonoster/chmodhelper",
+  "main": "apiserver.js",
+  "bin": {
+    "run-chmodhelper": "chmodhelper.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.4.1"
+  },
+  "preferGlobal": true,
+  "engines": {
+    "node": ">= 6.0.0"
+  }
+}
