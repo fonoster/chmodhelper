@@ -1,7 +1,7 @@
 {
   "name": "chmodhelper",
   "version": "0.0.1",
-  "description": "Watches changes on a given directory. Updates files mode.",
+  "description": "Watches for changes on a directory and updates the file mode for new JS files",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fonoster/chmodhelper"
