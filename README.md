@@ -47,7 +47,7 @@ Please read [CONTRIBUTING.md](https://github.com/fonoster/fonos/blob/master/CONT
 
 - [Pedro Sanders](https://github.com/psanders)
 
-See also the list of contributors who [participated](https://github.com/fonoster/certshelper/contributors) in this project.
+See also the list of contributors who [participated](https://github.com/fonoster/uploaderhelper/contributors) in this project.
 
 ## License
 
