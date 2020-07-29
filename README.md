@@ -2,7 +2,7 @@
 
 ![publish to docker](https://github.com/fonoster/chmodhelper/workflows/publish%20to%20docker%20hub/badge.svg)
 
-Watches for APP_CREATED events and changes the file mode if the entrypoint.
+Watches for `APP_CREATED` events and changes the file mode if the entrypoint.
 
 ## Available Versions
 
