@@ -1,10 +1,8 @@
 # Chmod Helper
 
-> Watches for changes on a directory and updates the file mode for every new JS file
-
 ![publish to docker](https://github.com/fonoster/chmodhelper/workflows/publish%20to%20docker%20hub/badge.svg)
 
-Watches for changes on a directory and updates the file mode for every new JS file.
+Watches for APP_CREATED events and changes the file mode for the entrypoint
 
 ## Available Versions
 
@@ -37,7 +35,7 @@ docker run -it \
 
 ## Volumes
 
-- `/data` - Volume used by the image to monitoring new files.
+- `/data` - Volume with shared data, including applications, recordings, and more.
 
 ## Contributing
 
