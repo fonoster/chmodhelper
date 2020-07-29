@@ -8,7 +8,7 @@ const BASE_DIR = process.env.BASE_DIR || '/data/apps'
 
 if (!process.env.EVENTS_BROKERS) {
   logger.log('error', 'chmodhelper [environment variable EVENTS_BROKERS is undefined]')
-  exit(1)
+  process.exit()
 }
 const BROKERS = process.env.EVENTS_BROKERS.split(',')
 const er = new EventsRecvr(BROKERS, process.env.EVENTS_QUEUE)
