@@ -1,6 +1,6 @@
 {
   "name": "chmodhelper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Watches for APP_CREATED events and changes the file mode for the entrypoint",
   "repository": {
     "type": "git",
