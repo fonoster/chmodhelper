@@ -13,11 +13,10 @@ const er = new EventsRecvr(BROKERS, process.env.EVENTS_QUEUE)
 er.connect()
 
 er.watchEvents(content => {
-  logger.log(`chmodhelper received new event [payload => ${content.toString()}]`)
+  logger.log('debug', `chmodhelper received new event [payload => ${content.toString()}]`)
   const event = JSON.parse(content.toString())
   if (event.name === 'APP_CREATED') {
-    console.log(`chmodhelper received new event [payload => ${content.toString()}]`)
-    logger.error(`chmodhelper received new event [payload => ${content.toString()}]`)
+    logger.error('debug', `chmodhelper received new event [payload => ${content.toString()}]`)
   }
 })
 
