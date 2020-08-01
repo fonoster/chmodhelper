@@ -1,6 +1,6 @@
 {
   "name": "chmodhelper",
-  "version": "0.0.31",
+  "version": "0.0.33",
   "description": "Watches for APP_CREATED events and changes the file mode if the entrypoint",
   "repository": {
     "type": "git",
@@ -21,8 +21,8 @@
     "run-chmodhelper": "chmodhelper.js"
   },
   "dependencies": {
-    "@fonos/events": "^0.0.31",
-    "@fonos/logger": "^0.0.31"
+    "@fonos/events": "^0.0.33",
+    "@fonos/logger": "^0.0.33"
   },
   "preferGlobal": true,
   "engines": {
