@@ -11,30 +11,28 @@ if (!process.env.EVENTS_BROKERS) {
   process.exit()
 }
 const BROKERS = process.env.EVENTS_BROKERS.split(',')
-const er = new EventsRecvr(BROKERS, process.env.EVENTS_QUEUE)
+const er = new EventsRecvr(BROKERS, 'APP_CREATED')
 er.connect()
 
 er.watchEvents(content => {
   logger.log('debug', `chmodhelper received new event [payload => ${content.toString()}]`)
   const event = JSON.parse(content.toString())
-  if (event.name === 'APP_CREATED') {
-    const pathToPackage = join(BASE_DIR, event.data.name, 'package.json')
-    let pathToEntryPoint
+  const pathToPackage = join(BASE_DIR, event.data.name, 'package.json')
+  let pathToEntryPoint
 
-    logger.log('debug', `chmodhelper received new event [pathToPackage => ${pathToPackage}]`)
+  logger.log('debug', `chmodhelper received new event [pathToPackage => ${pathToPackage}]`)
 
-    try {
-      const entryPoint = require(pathToPackage).main
-      pathToEntryPoint = join(BASE_DIR, event.data.name, entryPoint)
-    } catch(e) {
-      pathToEntryPoint = join(BASE_DIR, event.data.name, 'index.js')
-    }
+  try {
+    const entryPoint = require(pathToPackage).main
+    pathToEntryPoint = join(BASE_DIR, event.data.name, entryPoint)
+  } catch(e) {
+    pathToEntryPoint = join(BASE_DIR, event.data.name, 'index.js')
+  }
 
-    if (fs.existsSync(pathToEntryPoint)) {
-      fs.chmodSync(pathToEntryPoint, '0755')
-      logger.log('debug', `chmodhelper [changed file ${pathToEntryPoint} mode to 0755]`)
-    } else {
-      logger.log('debug', `chmodhelper [unable to find entrypoint]`)
-    }
+  if (fs.existsSync(pathToEntryPoint)) {
+    fs.chmodSync(pathToEntryPoint, '0755')
+    logger.log('debug', `chmodhelper [changed file ${pathToEntryPoint} mode to 0755]`)
+  } else {
+    logger.log('debug', `chmodhelper [unable to find entrypoint]`)
   }
 })
