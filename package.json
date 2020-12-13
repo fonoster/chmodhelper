@@ -1,7 +1,7 @@
 {
   "name": "chmodhelper",
   "version": "#{FONOS_VERSION}",
-  "description": "Watches for APP_CREATED events and changes the file mode if the entrypoint",
+  "description": "Watches for APP_CREATED events and changes the file mode for the entrypoint",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fonoster/chmodhelper"
